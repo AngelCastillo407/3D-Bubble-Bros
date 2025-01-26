@@ -11,7 +11,7 @@ namespace Platformer
         public LayerMask wall;
 
         private Rigidbody rigidbody; 
-        public Collider triggerCollider;
+        //public Collider triggerCollider;
         private SpriteRenderer sprite;
         private MeshRenderer myMesh;
 
@@ -25,7 +25,7 @@ namespace Platformer
         {
             rigidbody = GetComponent<Rigidbody>();
             
-            if (gameObject.name == "Ghost")
+            if (gameObject.name.Substring(0, 5) == "Ghost")
             {
                 sprite = GetComponent<SpriteRenderer>();
             }
@@ -92,9 +92,13 @@ namespace Platformer
                 }
             }
 
-            else if (other.gameObject.tag == "wall")
+            else if (other.gameObject.tag == "wall" || other.gameObject.tag == "Enemy")
             {
                 Flip();
+            }
+            else if (other.gameObject.tag == "EnemyBody")
+            {
+                Debug.Log("OH GREAT HEAVENS");
             }
         }
 

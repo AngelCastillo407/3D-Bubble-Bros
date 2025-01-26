@@ -9,6 +9,7 @@ public class PopBubble : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             gameObject.SetActive(false);
+            Destroy(gameObject, 1);
         }
     }
 }

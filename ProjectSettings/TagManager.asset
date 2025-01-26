@@ -11,6 +11,7 @@ TagManager:
   - floor
   - wall
   - deathFloor
+  - EnemyBody
   layers:
   - Default
   - TransparentFX
